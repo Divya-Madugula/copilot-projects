@@ -28,7 +28,12 @@ def display_weather_info(weather_data):
 # Main script entry point.
 # It asks the user for a location, fetches the weather, then displays the results.
 def main():
-    location = input("Enter location: ").strip()
+    try:
+        location = input("Enter location: ").strip()
+    except (KeyboardInterrupt, EOFError):
+        print("\nExiting.")
+        return
+
     if not location:
         print("Please enter a valid location.")
         return

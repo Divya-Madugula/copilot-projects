@@ -20,6 +20,7 @@ def get_weather(location):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
+        print(data, end="\n\n")
         return data
     else:
         print(f"Error: Unable to fetch weather data for {location}. Status code: {response.status_code}")
